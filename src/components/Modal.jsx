@@ -16,14 +16,17 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:3000/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        subject: `New message from ${name}`,
-        text: `Dear HR Manager,
+    const response = await fetch(
+      "https://cordrilladb.onrender.com/send-email",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          subject: `New Job Application from ${name}`,
+          text: `
+        Dear HR Manager,
 
         You have received a new job application for ${jobTitle} with the following details:
         
@@ -50,8 +53,9 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
         
         Attachments:
         Resume - John Doe.pdf`,
-      }),
-    });
+        }),
+      }
+    );
 
     if (response.ok) {
       toast.success("Form submitted successfully");
@@ -189,7 +193,7 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
               className="mr-2 px-4 py-2 border rounded-full text-red-500"
               onClick={handleClose}
             >
-              Cancel
+              Close
             </button>
             <button
               type="submit"

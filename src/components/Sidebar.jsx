@@ -34,16 +34,13 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   return (
     <div
       ref={sidebarRef}
-      className={`bg-white items-center justify-center p-12 h-screen border-r border-gray-500 transition-transform transform ${
+      className={`bg-white items-center justify-center p-4 h-screen border-r border-gray-500 transition-transform transform ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <img
-        className="mb-10 px-2"
-        src="../../public/images/Logo.png"
-        alt="Logo"
-      />
-      <ul className="flex flex-col gap-12">
+      <img className="px-2" src="/images/Logo.png" alt="Logo" />
+      <hr className="w-full border-red-600 mb-10" />
+      <ul className="flex flex-col gap-12 mx-8">
         <li
           className={`flex text-lg font-semibold gap-12 items-center ${
             activeLink === "/" ? "text-red-500" : "hover:text-red-500"
@@ -92,7 +89,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           <Link to="/careers">CAREERS</Link>
         </li>
       </ul>
-      <hr className="w-full border-red-600 mx-2 my-14" />
+      <hr className="w-full border-red-600  my-10" />
     </div>
   );
 };

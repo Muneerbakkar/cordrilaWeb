@@ -11,20 +11,6 @@ const jobListings = [
     location: "Kerala",
   },
   {
-    title: "Plant Operator",
-    description:
-      "Responsible for overseeing all operations at a production or manufacturing facility.",
-    schedule: "Mon - Sat",
-    location: "Kerala",
-  },
-  {
-    title: "General Worker",
-    description:
-      "Responsible for various manual tasks such as digging trenches, unloading building materials, and preparing job sites.",
-    schedule: "Mon - Sat",
-    location: "Kerala",
-  },
-  {
     title: "Dispatcher",
     description:
       "Scheduling and dispatching drivers, work crews, vehicles or equipment to appropriate locations according to predetermined schedules, customer requests or immediate needs.",

@@ -86,7 +86,10 @@ const Header = () => {
               </ul>
             </div>
             <div className="flex justify-end md:hidden">
-              <button onClick={toggleNavbar} className="focus:outline-none mr-2">
+              <button
+                onClick={toggleNavbar}
+                className="focus:outline-none mr-2"
+              >
                 <svg
                   className={`h-6 w-6 ${
                     isOpen ? "text-red-600" : "text-black"
