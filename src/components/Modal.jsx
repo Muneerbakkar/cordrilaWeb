@@ -16,16 +16,15 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(
-      "https://cordrilladb.onrender.com/send-email",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          subject: `New Job Application from ${name}`,
-          text: `
+    const response = await fetch("http://localhost:3000/apply-job", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: "muneereb007@gmail.com",
+        subject: `New Job Application from ${name}`,
+        text: `
         Dear HR Manager,
 
         You have received a new job application for ${jobTitle} with the following details:
@@ -53,9 +52,8 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
         
         Attachments:
         Resume - John Doe.pdf`,
-        }),
-      }
-    );
+      }),
+    });
 
     if (response.ok) {
       toast.success("Form submitted successfully");

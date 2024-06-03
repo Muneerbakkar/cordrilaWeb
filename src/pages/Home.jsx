@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import VerticalBar from "../components/VerticalBar";
 
 const Home = () => {
@@ -21,7 +22,11 @@ const Home = () => {
           <VerticalBar />
         </div>
         <div className="absolute top-[70%] left-[5%] flex gap-14 items-center justify-center">
-          <img src="/images/Rectangle.svg" alt="" className="h-12 md:h-14 ml-2" />
+          <img
+            src="/images/Rectangle.svg"
+            alt=""
+            className="h-12 md:h-14 ml-2"
+          />
           <p className="text-start md:text-2xl">
             Feel The Best <br /> Delivery Experience With Us!
           </p>
@@ -37,9 +42,11 @@ const Home = () => {
             Plus Districts In India To Cater All B2B And B2C For Last Mile
             Delivery Which Can Be Tracked In Real Time With ETA.
           </p>
-          <button className="bg-[#BF360C] text-white text-lg md:text-xl rounded-full px-4 py-2 mb-8">
-            Contact us
-          </button>
+          <Link to="/contactus">
+            <button className="bg-[#BF360C] text-white text-lg md:text-xl rounded-full px-4 py-2 mb-8">
+              Contact us
+            </button>
+          </Link>
         </div>
         <div className="text-center mb-8">
           <h1 className="text-xl md:text-2xl font-medium">WE’RE CORDRILA</h1>
@@ -56,11 +63,7 @@ const Home = () => {
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 items-start text-[#862608] list">
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img
-                src="/images/Group 4200.svg"
-                alt=""
-                className="h-8 w-auto"
-              />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold"> 10+</span>
                 <br />
@@ -70,11 +73,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img
-                src="/images/Group 4200.svg"
-                alt=""
-                className="h-8 w-auto"
-              />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">10+ </span>
                 <br />
@@ -84,11 +83,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img
-                src="/images/Group 4200.svg"
-                alt=""
-                className="h-8 w-auto"
-              />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">50+ </span>
                 <br />
@@ -98,11 +93,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img
-                src="/images/Group 4200.svg"
-                alt=""
-                className="h-8 w-auto"
-              />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">20k Sqft+ </span>
                 <br />
@@ -112,11 +103,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img
-                src="/images/Group 4200.svg"
-                alt=""
-                className="h-8 w-auto"
-              />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">2+ </span>
                 <br />
@@ -126,11 +113,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img
-                src="/images/Group 4200.svg"
-                alt=""
-                className="h-8 w-auto"
-              />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">100+ </span>
                 <br />

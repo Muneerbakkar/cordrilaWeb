@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import ContactUs from "../components/ContactUs";
 import Feedback from "../components/Feedback";
 import { ToastContainer } from "react-toastify";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <div className="relative flex justify-center items-center">

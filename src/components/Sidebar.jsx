@@ -13,10 +13,12 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   const [activeLink, setActiveLink] = useState(null);
   const sidebarRef = useRef();
 
+
   useEffect(() => {
     const pathname = window.location.pathname;
     setActiveLink(pathname);
   }, []);
+
 
   useEffect(() => {
     const handleClickOutside = (event) => {

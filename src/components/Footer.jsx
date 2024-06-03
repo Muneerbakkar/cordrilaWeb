@@ -23,13 +23,13 @@ const Footer = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/aboutus">About Us</Link>
               </li>
               <li>
                 <Link to="/solutions">Solutions</Link>
               </li>
               <li>
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contactus">Contact Us</Link>
               </li>
               <li>
                 <Link to="/careers">Careers</Link>
@@ -41,10 +41,10 @@ const Footer = () => {
             <p className="mb-4 md:mb-10 ">Lets Connect</p>
             <ul>
               <li>
-                <Link to="">Email Us</Link>
+                <Link to="/contactus">Email Us</Link>
               </li>
               <li>
-                <Link to="">Contact Us</Link>
+                <Link to="/contactus">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -64,8 +64,8 @@ const Footer = () => {
         <div className="w-full flex justify-center opacity-30">
           <ul className="flex gap-8">
             <li>
-              <Link to="">
-                <img src="/images/Group 4140.svg" alt="" />
+              <Link to="https://www.facebook.com/cordrila">
+                <img src="/images/Group 4140.svg" alt="facebook" />
               </Link>
             </li>
             <li>
@@ -79,8 +79,8 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="">
-                <img src="/images/Group 4139.svg" alt="" />
+              <Link to="https://www.instagram.com/cordrila/">
+                <img src="/images/Group 4139.svg" alt="instagram" />
               </Link>
             </li>
           </ul>

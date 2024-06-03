@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,13 +8,12 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  const [activeLink, setActiveLink] = useState(null);
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState(location.pathname);
 
   useEffect(() => {
-    const pathname = window.location.pathname;
-    setActiveLink(pathname);
-    console.log("pathname", pathname);
-  }, []);
+    setActiveLink(location.pathname);
+  }, [location]);
 
   return (
     <div className="py-6 px-2">
@@ -39,7 +38,6 @@ const Header = () => {
                   className={`flex gap-12 items-center ${
                     activeLink === "/" ? "text-red-500" : "hover:text-red-500"
                   }`}
-                  onClick={() => setActiveLink("/")}
                 >
                   <Link to="/">HOME</Link>
                 </li>
@@ -49,7 +47,6 @@ const Header = () => {
                       ? "text-red-500"
                       : "hover:text-red-500"
                   }`}
-                  onClick={() => setActiveLink("/aboutus")}
                 >
                   <Link to="/aboutus">ABOUT US</Link>
                 </li>
@@ -59,7 +56,6 @@ const Header = () => {
                       ? "text-red-500"
                       : "hover:text-red-500"
                   }`}
-                  onClick={() => setActiveLink("/solutions")}
                 >
                   <Link to="/solutions">SOLUTIONS</Link>
                 </li>
@@ -69,7 +65,6 @@ const Header = () => {
                       ? "text-red-500"
                       : "hover:text-red-500"
                   }`}
-                  onClick={() => setActiveLink("/contactus")}
                 >
                   <Link to="/contactus">CONTACT US</Link>
                 </li>
@@ -79,7 +74,6 @@ const Header = () => {
                       ? "text-red-500"
                       : "hover:text-red-500"
                   }`}
-                  onClick={() => setActiveLink("/careers")}
                 >
                   <Link to="/careers">CAREERS</Link>
                 </li>
