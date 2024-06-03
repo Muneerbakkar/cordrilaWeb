@@ -16,7 +16,7 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:3000/apply-job", {
+    const response = await fetch("https://cordrilladb.onrender.com/apply-job", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
