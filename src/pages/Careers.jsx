@@ -73,7 +73,7 @@ const Careers = () => {
   const visibleJobs = showAll ? jobListings : jobListings.slice(0, 4);
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center mt-[6.5rem]">
       <div className="relative flex items-center justify-center">
         <img
           src="/images/carrier.jpg"

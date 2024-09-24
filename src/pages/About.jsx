@@ -3,7 +3,7 @@ import TestimonialsCarousel from "../components/TestimonialsCarousel";
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mt-[6.5rem]">
       <div className="flex flex-col lg:flex-row mx-5 lg:mx-10 px-5 lg:px-48 py-3 gap-10 mb-52">
         <div className="text-start">
           <h1 className="font-bold text-2xl mt-10">

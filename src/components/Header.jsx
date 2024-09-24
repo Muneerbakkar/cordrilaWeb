@@ -7,6 +7,9 @@ const Header = () => {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
 
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
@@ -16,11 +19,11 @@ const Header = () => {
   }, [location]);
 
   return (
-    <div className="py-6 px-2">
+    <div className="py-6 px-2 fixed border-b border-gray-100 bg-white top-0 z-40 w-full">
       <div className="flex bg-green-300">
         {isOpen && (
           <div className="fixed inset-0 z-50 w-[18rem] md:hidden">
-            <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
           </div>
         )}
         <div className="bg-white font-bold not-italic w-full">
@@ -36,7 +39,7 @@ const Header = () => {
               <ul className="flex gap-14 pl-10 pr-10 items-center text-xs">
                 <li
                   className={`flex gap-12 items-center ${
-                    activeLink === "/" ? "text-red-500" : "hover:text-red-500"
+                    activeLink === "/" ? "text-[#BF360C]" : "hover:text-red-500"
                   }`}
                 >
                   <Link to="/">HOME</Link>
@@ -44,8 +47,8 @@ const Header = () => {
                 <li
                   className={`flex gap-12 items-center whitespace-nowrap ${
                     activeLink === "/aboutus"
-                      ? "text-red-500"
-                      : "hover:text-red-500"
+                      ? "text-[#BF360C]"
+                      : "hover:text-[#BF360C]"
                   }`}
                 >
                   <Link to="/aboutus">ABOUT US</Link>
@@ -53,8 +56,8 @@ const Header = () => {
                 <li
                   className={`flex gap-12 items-center ${
                     activeLink === "/solutions"
-                      ? "text-red-500"
-                      : "hover:text-red-500"
+                      ? "text-[#BF360C]"
+                      : "hover:text-[#BF360C]"
                   }`}
                 >
                   <Link to="/solutions">SOLUTIONS</Link>
@@ -62,8 +65,8 @@ const Header = () => {
                 <li
                   className={`flex gap-12 items-center whitespace-nowrap ${
                     activeLink === "/contactus"
-                      ? "text-red-500"
-                      : "hover:text-red-500"
+                      ? "text-[#BF360C]"
+                      : "hover:text-[#BF360C]"
                   }`}
                 >
                   <Link to="/contactus">CONTACT US</Link>
@@ -71,8 +74,8 @@ const Header = () => {
                 <li
                   className={`flex gap-12 items-center ${
                     activeLink === "/careers"
-                      ? "text-red-500"
-                      : "hover:text-red-500"
+                      ? "text-[#BF360C]"
+                      : "hover:text-[#BF360C]"
                   }`}
                 >
                   <Link to="/careers">CAREERS</Link>
@@ -84,22 +87,37 @@ const Header = () => {
                 onClick={toggleNavbar}
                 className="focus:outline-none mr-2"
               >
-                <svg
-                  className={`h-6 w-6 ${
-                    isOpen ? "text-red-600" : "text-black"
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  ></path>
-                </svg>
+                {isOpen ? (
+                  <svg
+                    className="h-6 w-6 text-[#BF360C]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                ) : (
+                  <svg
+                    className="h-6 w-6 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16m-7 6h7"
+                    ></path>
+                  </svg>
+                )}
               </button>
             </div>
           </div>

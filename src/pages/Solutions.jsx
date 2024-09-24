@@ -1,7 +1,7 @@
 const Solutions = () => {
   return (
     <>
-      <div className="relative flex items-center justify-center">
+      <div className="relative flex items-center justify-center mt-[6.5rem]">
         <img
           src="/images/Rectangle 18.jpg"
           alt=""

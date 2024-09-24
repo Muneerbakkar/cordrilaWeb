@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Solutions from "./pages/Solutions";
 import Careers from "./pages/Careers";
+import Apk from "./pages/Apk";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="contactus" element={<Contact />} />
           <Route path="solutions" element={<Solutions />} />
           <Route path="careers" element={<Careers />} />
+          <Route path="apk" element={<Apk/>} />
         </Route>
       </Routes>
     </BrowserRouter>

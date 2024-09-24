@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import ContactUs from "../components/ContactUs";
 import Feedback from "../components/Feedback";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 
 const Contact = () => {
   useEffect(() => {
@@ -10,7 +10,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="relative flex justify-center items-center">
+      <div className="relative flex justify-center items-center mt-[6.5rem]">
         <img
           src="/images/Rectangle 19.jpg"
           alt=""
@@ -79,7 +79,7 @@ const Contact = () => {
           +91 04842925935
         </div>
       </div>
-      <ToastContainer />
+      <Toaster />
     </>
   );
 };

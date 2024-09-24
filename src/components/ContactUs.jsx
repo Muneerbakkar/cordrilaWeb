@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast from "react-hot-toast";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -12,7 +11,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://cordrilladb.onrender.com/send-email", {
+    const response = await fetch("https://cordrilla-db.vercel.app/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +34,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="text-start p-5 w-full md:w-[50%]">
+    <div className="text-start p-5 m-4 rounded-md shadow-md md:shadow-none  md:w-[50%]">
       <h1 className="mb-5 font-bold text-2xl">Contact Us</h1>
       <form ref={form} onSubmit={handleSubmit} className="text-xs font-normal">
         <label htmlFor="name" className="">

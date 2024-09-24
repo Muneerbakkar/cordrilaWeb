@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 // eslint-disable-next-line react/prop-types
 const Modal = ({ showModal, handleClose, jobTitle }) => {
@@ -11,60 +11,78 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
   const [qualification, setQualification] = useState("");
   const [experience, setExperience] = useState("");
   const [gender, setGender] = useState("");
+  const [resume, setResume] = useState(null);
   const form = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://cordrilladb.onrender.com/apply-job", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        to: "muneereb007@gmail.com",
-        subject: `New Job Application from ${name}`,
-        text: `
-        Dear HR Manager,
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("phone", phone);
+    formData.append("location", location);
+    formData.append("qualification", qualification);
+    formData.append("experience", experience);
+    formData.append("gender", gender);
+    formData.append("resume", resume);
+    formData.append("subject", `New Job Application from ${name}`);
+    formData.append(
+      "text",
+      `
+      Dear HR Manager,
 
-        You have received a new job application for ${jobTitle} with the following details:
-        
-        Full Name : ${name}
-        
-        Email : ${email}
-        
-        Phone Number : ${phone}
-        
-        Current Location : ${location}
-        
-        Qualification : ${qualification}
-        
-        Experience : ${experience}
-        
-        Gender : ${gender}
-        
-        Please find the candidate's resume and cover letter attached for your review.
-        
-        Thank you for your attention to this application.
-        
-        Best regards,
-        Cordrila Infrastructure Pvt Ltd
-        
-        Attachments:
-        Resume - John Doe.pdf`,
-      }),
-    });
+      You have received a new job application for 
+      ${jobTitle} with the following details:
+      
+      Full Name : ${name}
+      
+      Email : ${email}
+      
+      Phone Number : ${phone}
+      
+      Current Location : ${location}
+      
+      Qualification : ${qualification}
+      
+      Experience : ${experience}
+      
+      Gender : ${gender}
+      
+      Please find the candidate's resume and cover letter
+      attached for your review.
+      
+      Thank you for your attention to this application.
+      
+      Best regards,
+      Cordrila Infrastructure Pvt Ltd`
+    );
 
-    if (response.ok) {
-      toast.success("Form submitted successfully");
-      setName("");
-      setEmail("");
-      setPhone("");
-      setLocation("");
-      setQualification("");
-      setExperience("");
-      setGender("");
-    } else {
+    try {
+      const response = await axios.post(
+        "https://cordrilla-db.vercel.app/apply-job",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        toast.success("Form submitted successfully");
+        setName("");
+        setEmail("");
+        setPhone("");
+        setLocation("");
+        setQualification("");
+        setExperience("");
+        setGender("");
+        setResume(null);
+      } else {
+        toast.error("Error submitting form");
+      }
+    } catch (error) {
       toast.error("Error submitting form");
     }
   };
@@ -72,8 +90,8 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
   if (!showModal) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl m-2 text-start">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white p-4 rounded-lg shadow-lg w-full max-w-2xl m-2 text-start">
         <h2 className="text-2xl font-bold mb-4">Apply for {jobTitle}</h2>
         <form ref={form} onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -183,6 +201,15 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
               </label>
             </div>
           </div>
+          <div className="mb-4">
+            <label className="block text-xs font-normal mb-2">Resume</label>
+            <input
+              type="file"
+              className="w-full p-2 rounded-lg text-xs bg-[#F4F4F4]"
+              onChange={(e) => setResume(e.target.files[0])}
+              required
+            />
+          </div>
           <input type="hidden" value="Muneer" name="to_name" />
           <input type="hidden" value={jobTitle} name="from_designation" />
           <div className="flex justify-end">
@@ -202,7 +229,7 @@ const Modal = ({ showModal, handleClose, jobTitle }) => {
           </div>
         </form>
       </div>
-      <ToastContainer />
+      <Toaster />
     </div>
   );
 };

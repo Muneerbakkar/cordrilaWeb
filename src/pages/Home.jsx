@@ -3,7 +3,7 @@ import VerticalBar from "../components/VerticalBar";
 
 const Home = () => {
   return (
-    <div className="w-full">
+    <div className="w-full mt-[6.5rem]">
       <div className="relative">
         <img
           src="/images/Banner-Img.jpg"
@@ -63,7 +63,7 @@ const Home = () => {
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 items-start text-[#862608] list">
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto my-2" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold"> 10+</span>
                 <br />
@@ -73,7 +73,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto my-2" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">10+ </span>
                 <br />
@@ -83,7 +83,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto my-2" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">50+ </span>
                 <br />
@@ -93,7 +93,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto my-2" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">20k Sqft+ </span>
                 <br />
@@ -103,7 +103,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto my-2" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">2+ </span>
                 <br />
@@ -113,7 +113,7 @@ const Home = () => {
           </li>
           <li className="text-center">
             <div className="mb-4 flex gap-6">
-              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto" />
+              <img src="/images/Group 4200.svg" alt="" className="h-8 w-auto my-2" />
               <p className="mb-2 text-base text-start">
                 <span className="font-bold">100+ </span>
                 <br />

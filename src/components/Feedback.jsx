@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast from "react-hot-toast";
 
 const Feedback = () => {
   const [name, setName] = useState("");
@@ -13,7 +12,7 @@ const Feedback = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://cordrilladb.onrender.com/send-email", {
+    const response = await fetch("https://cordrilla-db.vercel.app/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +35,7 @@ const Feedback = () => {
   };
 
   return (
-    <div className="p-10 flex flex-col items-center justify-center mx-auto mb-12 rounded-lg md:shadow-2xl w-full md:w-3/4 lg:w-1/2">
+    <div className="p-10 flex flex-col items-center justify-center mx-4 md:mx-auto mb-12 rounded-lg shadow-md md:w-3/4 lg:w-1/2">
       <h1 className="font-bold text-2xl">Give Us Your Feedback</h1>
       <p className="py-3 text-sm font-normal">Your feedback is our energy</p>
       <form
